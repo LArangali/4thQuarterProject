@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Key Biological Processes</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<img src="logocs1.png" alt="Animal Physiology Logo" class="logo">
+		<h1>Welcome to Key Biological Processes</h1>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="processes.html">Processes</a></li>
+				<li><a href="functions.html">Functions</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Key Biological Processes</h2>
+			<ul>
+				<li>
+					<strong>Metabolism:</strong>
+					<p>
+						Metabolism refers to the chemical processes that occur within an organism to maintain life. It involves the conversion of nutrients into energy, the synthesis of molecules necessary for cellular functions, and the breakdown of substances to release energy and eliminate waste products.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="metabolism-tooltip">Metabolism is essential for energy production, growth, repair, and maintenance of cells and tissues.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Homeostasis:</strong>
+					<p>
+						Homeostasis is the ability of an organism to maintain internal stability and balance despite external changes. It involves regulatory mechanisms that control factors such as body temperature, pH levels, blood pressure, and nutrient levels within narrow ranges to ensure optimal functioning.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="homeostasis-tooltip">Homeostasis enables organisms to respond to environmental changes and maintain internal equilibrium for survival.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Growth and Development:</strong>
+					<p>
+						Growth and development refer to the processes of increasing in size and complexity over time. Growth involves cell division, enlargement, and differentiation, leading to the formation of tissues, organs, and organisms. Development encompasses changes in structure, function, and behavior from conception to maturity.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="growth-tooltip">Growth and development are essential for the formation, repair, and renewal of cells and tissues throughout an organism's life cycle.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Reproduction:</strong>
+					<p>
+						Reproduction is the process by which organisms produce offspring, ensuring the continuation of species. It involves the formation of reproductive cells (gametes), their fusion during fertilization, and subsequent development of new individuals. Reproduction can occur sexually, involving two parents and genetic variation, or asexually, with one parent and genetic identical offspring.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="reproduction-tooltip">Reproduction is fundamental for species survival, genetic diversity, and adaptation to changing environments.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Adaptation:</strong>
+					<p>
+						Adaptation is the process by which organisms adjust to environmental changes to enhance survival and reproduction. It involves genetic, physiological, and behavioral modifications that improve an organism's fitness and ability to thrive in specific habitats or conditions.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="adaptation-tooltip">Adaptation enables organisms to evolve and thrive in diverse environments by acquiring traits suited to their ecological niche.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<script>
+		document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+			trigger.addEventListener('mouseover', () => {
+				const tooltip = trigger.previousElementSibling;
+				tooltip.style.visibility = 'visible';
+				tooltip.style.opacity = '1';
+			});
+			trigger.addEventListener('mouseout', () => {
+				const tooltip = trigger.previousElementSibling;
+				tooltip.style.visibility = 'hidden';
+				tooltip.style.opacity = '0';
+			});
+		});
+	</script>
+	</body>
+	<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #6B8A7A;
+	}
+	
+	header {
+		background-color: #254336;
+		color: white;
+		padding: 20px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.logo {
+		height: 100px;
+		margin-left: 20px; 
+	}
+	
+	h1 {
+		color: #B7B597;
+		margin-left: 20px; 
+	}
+
+	nav {
+		background-color: #254336;
+		padding: 20px 0;
+		text-align: right;
+	}
+	
+	nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	nav ul li {
+		margin-right: 20px;
+	}
+
+	nav ul li a {
+		color: #B7B597;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+	}
+	
+	nav ul li a img {
+		margin-right: 5px;
+	}
+
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 200px;
+		background-color: #333;
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: 5px;
+		position: absolute;
+		z-index: 1;
+		bottom: 125%;
+		left: 50%;
+		transform: translateX(-50%);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.tooltip-trigger {
+		background-color: #B7B597;
+		color: #254336;
+		padding: 5px 10px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-left: 10px;
+	}
+
+	.tooltip-trigger:hover {
+		background-color: #254336;
+		color: #B7B597;
+	}
+	</style>
+</html>
+
+						

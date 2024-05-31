@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	<header>
+		<img src="logocs1.png" alt="Animal Physiology Logo" class="logo">
+		<h1>Welcome to Animal Physiology</h1>
+	</header>
+	<main>
+		<div class="container">
+			<h2>Login</h2>
+			<form onsubmit="login(); return false;">
+				<label for="login-username">Username:</label>
+				<input type="text" id="login-username" required>
+				<label for="login-password">Password:</label>
+				<input type="password" id="login-password" required>
+				<button type="submit">Login</button>
+			</form>
+
+			<h2>Register</h2>
+			<form onsubmit="register(); return false;">
+				<label for="reg-username">Username:</label>
+				<input type="text" id="reg-username" required>
+				<label for="reg-password">Password:</label>
+				<input type="password" id="reg-password" required>
+				<button type="submit">Register</button>
+			</form>
+
+			<p id="login-status"></p>
+		</div>
+	</main>
+	<script>
+		function register() {
+			const username = document.getElementById("reg-username").value;
+			const password = document.getElementById("reg-password").value;
+
+			if (localStorage.getItem(username)) {
+				alert("Username already exists. Please choose a different username.");
+			} else {
+				localStorage.setItem(username, password);
+				alert("Registration successful! You can now log in.");
+				window.location.href = 'home.html';
+			}
+		}
+
+		function login() {
+			const username = document.getElementById("login-username").value;
+			const password = document.getElementById("login-password").value;
+
+			const storedPassword = localStorage.getItem(username);
+
+			if (storedPassword && storedPassword === password) {
+				alert("Login successful!");
+				window.location.href = 'home.html';
+			} else {
+				document.getElementById("login-status").innerText = "Invalid username or password.";
+			}
+		}
+	</script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #6B8A7A;
+		}
+
+		header {
+			background-color: #254336;
+			color: white;
+			padding: 20px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.intro {
+		
+		}
+
+		.logo {
+			height: 100px; 
+			margin-left: 20px; 
+		}
+
+		h1 {
+			color: #B7B597;
+			margin: 0 auto;
+		}
+		
+		.container {
+			width: 80%;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		form {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		#login-status {
+			color: red;
+			margin-top: 10px;
+		}
+	</style>
+</body>
+</html>

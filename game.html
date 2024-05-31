@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Scramble Game</title>
+	<style>
+		button {
+			margin: 5px;
+		}
+	</style>
+</head>
+<header>
+		<img src="logocs1.png" alt="Animal Physiology Logo" class="logo">
+		<h1>Scramble Game</h1>
+		<nav>
+			<ul>
+				<li><a href="about.html">About</a></li>
+				<li><a href="systems.html">Body Systems</a></li>
+				<li><a href="processes.html">Processes</a></li>
+				<li><a href="functions.html">Functions</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+</header>
+<body>
+	<div class="container">
+        <section class="contact-section">
+            <div id="wordContainer"></div>
+
+			<div id="inputContainer"></div>
+
+			<button onclick="getHint()">Get Hint</button>
+			<button onclick="checkWord()">Check Answer</button>
+			<button onclick="scrambleWords()">Scramble Again</button>
+
+        </section>
+    </div>
+	<script>
+		const wordsAndHints = [
+			{word: "nervous system", hint: "This starts with the letter N, It is a system of our body and is your body's messenger for feeling anxious."},
+			{word: "circulatory system", hint: "This starts C, It is a system of our body that pumps blood."},
+			{word: "respiratory system", hint: "It is a system of our body, Breathing in oxygen and breathing out carbon dioxide, starting with R."},
+			{word: "digestive system", hint: "Starts with the letter D, It is a system of our body and it helps your body break down food."},
+			{word: "musculoskeletal system", hint: "Starts with letter M, It is a system of our body and it gives you the ability to move and supports your body."},
+			{word: "metabolism", hint: "Starts with M and is your body's energy engine."},
+			{word: "homeostasis", hint: "Keeping your body's balanced and starts with H."},
+			{word: "growth and development", hint: "This has 3 words the first letter of each words are g,a,d the deffinition of thus getting bigger and learning new things."},
+			{word: "reproduction", hint: "Starts with R and the hint is making babies."},
+			{word: "adaptation", hint: "Changing to fit your environment and this starts with A."}
+		];
+
+		let currentIndex = -1;
+
+		function displayWord() {
+			const wordContainer = document.getElementById("wordContainer");
+			const inputContainer = document.getElementById("inputContainer");
+			wordContainer.innerHTML = "";
+			inputContainer.innerHTML = "";
+			const currentWord = wordsAndHints[currentIndex];
+			const scrambledWord = scramble(currentWord.word);
+			const hint = currentWord.hint;
+			wordContainer.innerHTML = `<p><strong>Scrambled Word:</strong> ${scrambledWord}</p><p><strong>Hint:</strong> ${hint}</p>`;
+			inputContainer.innerHTML = `<input type="text" id="userInput" placeholder="Type your answer here">`;
+		}
+
+		function scramble(word) {
+			return word.split('').sort(function(){return 0.5-Math.random()}).join('');
+		}
+
+		function getHint() {
+			if (currentIndex !== -1) {
+				alert(wordsAndHints[currentIndex].hint);
+			}
+		}
+
+		function checkWord() {
+			const userInput = document.getElementById("userInput").value.trim();
+			const correctAnswer = wordsAndHints[currentIndex].word;
+			if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+				alert("Congratulations! Your answer is correct.");
+				scrambleWords();
+			} else {
+				alert("Oops! That's not quite right. Keep trying!");
+			}
+		}
+
+		function scrambleWords() {
+			let newIndex = currentIndex;
+			while (newIndex === currentIndex) {
+				newIndex = Math.floor(Math.random() * wordsAndHints.length);
+			}
+			currentIndex = newIndex;
+			displayWord();
+		}
+
+		scrambleWords();
+	</script>
+	</body>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #6B8A7A;
+		}
+
+		header {
+			background-color: #254336;
+			color: white;
+			padding: 20px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.intro {
+		
+		}
+
+		.logo {
+			height: 100px; 
+			margin-left: 20px; 
+		}
+
+		h1 {
+			color: #B7B597;
+			margin-left: 20px; 
+		}
+
+		nav {
+			background-color: #254336;
+			padding: 20px 0;
+			text-align: right;
+		}
+
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		nav ul li {
+			margin-right: 20px;
+		}
+
+		nav ul li a {
+			color: #B7B597;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+		}
+
+		nav ul li a img {
+			margin-right: 5px;
+		}
+		
+		.container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #DAD3BE;
+        }
+	</style>
+</html>

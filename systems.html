@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animal Body Systems</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<img src="logocs1.png" alt="Animal Physiology Logo" class="logo">
+		<h1>Welcome to Animal Physiology</h1>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="processes.html">Processes</a></li>
+				<li><a href="functions.html">Functions</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Major Body Systems</h2>
+			<ul>
+				<li>
+					<strong>Nervous System:</strong>
+					<p>
+						The nervous system is a complex network consisting of the brain, spinal cord, and nerves. Its primary function is to act as the body's communication and control center, regulating thoughts, emotions, and movements. It is divided into the central nervous system (CNS), which comprises the brain and spinal cord responsible for processing information, and the peripheral nervous system (PNS), consisting of nerves that relay information between the CNS and the rest of the body, enabling sensory perception and motor control. Through electrical and chemical signals, the nervous system facilitates sensory perception, motor functions, and higher cognitive processes like memory and learning.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="nervous-tooltip">The nervous system plays a crucial role in coordinating actions and transmitting signals throughout the body.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Circulatory System:</strong>
+					<p>
+						The circulatory system encompasses the heart, blood vessels (arteries, veins, capillaries), and blood. This system serves as the body's distribution network, transporting essential substances such as nutrients, oxygen, hormones, and immune cells to various cells and tissues while removing metabolic waste products like carbon dioxide and toxins. The heart pumps oxygen-rich blood to the body through arteries, and then the oxygen-depleted blood returns to the lungs via veins for oxygenation. Blood plays vital roles in carrying nutrients, regulating body temperature, facilitating immune responses, and aiding in clotting processes.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="circulatory-tooltip">The circulatory system ensures the distribution of essential substances and the removal of metabolic waste products.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Respiratory System:</strong>
+					<p>
+						The respiratory system comprises the lungs, airways (trachea, bronchi, bronchioles), and respiratory muscles. Its primary function is to facilitate breathing, allowing the intake of oxygen and the expulsion of carbon dioxide. In the lungs, oxygen from the inhaled air diffuses into the blood while carbon dioxide is released from the blood into the lungs to be exhaled. Oxygen is crucial for cellular respiration, providing energy for bodily functions, while the removal of carbon dioxide helps maintain the body's acid-base balance.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="respiratory-tooltip">The respiratory system is essential for oxygenating the blood and removing carbon dioxide, supporting cellular respiration.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Digestive System:</strong>
+					<p>
+						The digestive system includes organs such as the mouth, esophagus, stomach, intestines, liver, pancreas, and gallbladder. Its role is to process food, break down nutrients, and eliminate waste products. Food undergoes mechanical and chemical digestion in the digestive tract, where nutrients like carbohydrates, proteins, fats, vitamins, and minerals are absorbed into the bloodstream for utilization by cells. Waste products and undigested food are eliminated from the body through bowel movements.
+										</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="digestive-tooltip">The digestive system breaks down food into usable nutrients and eliminates indigestible substances from the body.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+				<br><br>
+				<li>
+					<strong>Musculoskeletal System:</strong>
+					<p>
+						The musculoskeletal system comprises muscles, bones, joints, ligaments, and tendons. It provides structural support, facilitates movement, and protects vital organs. Muscles contract and relax, enabling movement and maintaining posture, while bones offer structural support, protect organs, store minerals like calcium, and produce blood cells in the bone marrow. Ligaments and tendons connect bones and muscles, ensuring stability and coordinated movement.
+					</p>
+					<div class="tooltip">
+						<span class="tooltiptext" id="musculoskeletal-tooltip">The musculoskeletal system allows for mobility, stability, and protection of internal organs and structures.</span>
+						<span class="tooltip-trigger">Learn More</span>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<script>
+		document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+			trigger.addEventListener('mouseover', () => {
+				const tooltip = trigger.previousElementSibling;
+				tooltip.style.visibility = 'visible';
+				tooltip.style.opacity = '1';
+			});
+			trigger.addEventListener('mouseout', () => {
+				const tooltip = trigger.previousElementSibling;
+				tooltip.style.visibility = 'hidden';
+				tooltip.style.opacity = '0';
+			});
+		});
+	</script>
+	</body>
+	<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #6B8A7A;
+	}
+	
+	header {
+		background-color: #254336;
+		color: white;
+		padding: 20px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.logo {
+		height: 100px; 
+		margin-left: 20px; 
+	}
+	
+	h1 {
+		color: #B7B597;
+		margin-left: 20px;
+	}
+
+	nav {
+		background-color: #254336;
+		padding: 20px 0;
+		text-align: right;
+	}
+	
+	nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	nav ul li {
+		margin-right: 20px;
+	}
+
+	nav ul li a {
+		color: #B7B597;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+	}
+	
+	nav ul li a img {
+		margin-right: 5px;
+	}
+
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 200px;
+		background-color: #333;
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: 5px;
+		position: absolute;
+		z-index: 1;
+		bottom: 125%;
+		left: 50%;
+		transform: translateX(-50%);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.tooltip-trigger {
+		background-color: #B7B597;
+		color: #254336;
+		padding: 5px 10px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-left: 10px;
+	}
+
+	.tooltip-trigger:hover {
+		background-color: #254336;
+		color: #B7B597;
+	}
+	</style>
+</html>
